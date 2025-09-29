@@ -17,7 +17,6 @@ class ItemsTest < ApplicationSystemTestCase
     fill_in "Category", with: @item.category
     check "Expires" if @item.expires
     fill_in "Expirydate", with: @item.expiryDate
-    fill_in "Id", with: @item.id
     fill_in "Location", with: @item.location
     fill_in "Name", with: @item.name
     fill_in "Price", with: @item.price
@@ -35,7 +34,6 @@ class ItemsTest < ApplicationSystemTestCase
     fill_in "Category", with: @item.category
     check "Expires" if @item.expires
     fill_in "Expirydate", with: @item.expiryDate
-    fill_in "Id", with: @item.id
     fill_in "Location", with: @item.location
     fill_in "Name", with: @item.name
     fill_in "Price", with: @item.price
