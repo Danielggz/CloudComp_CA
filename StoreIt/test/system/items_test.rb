@@ -33,7 +33,7 @@ class ItemsTest < ApplicationSystemTestCase
 
     fill_in "Category", with: @item.category
     check "Expires" if @item.expires
-    fill_in "Expirydate", with: @item.expiryDate
+    fill_in "Expirydate", with: @item.expiry_date
     fill_in "Location", with: @item.location
     fill_in "Name", with: @item.name
     fill_in "Price", with: @item.price
@@ -50,4 +50,20 @@ class ItemsTest < ApplicationSystemTestCase
 
     assert_text "Item was successfully destroyed"
   end
+
+  # test "should not accept incomplete records" do
+  #   visit items_url
+  #   click_on "New item"
+
+  #   fill_in "Category", with: @item.category
+  #   check "Expires" if @item.expires
+  #   fill_in "expiry_date", with: @item.expiryDate
+  #   fill_in "Location", with: @item.location
+  #   fill_in "Name", with: ""
+  #   fill_in "Price", with: @item.price
+  #   fill_in "Quantity", with: @item.quantity
+
+  #   assert_text "Name of the product can't be blank"
+  #   click_on "Back"
+  # end
 end

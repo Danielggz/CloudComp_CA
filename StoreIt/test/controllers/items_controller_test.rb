@@ -45,4 +45,9 @@ class ItemsControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to items_url
   end
+  
+  test "should not accept incomplete records" do
+    post items_url, params: { item: { category: @item.category, expires: @item.expires, expiryDate: @item.expiryDate, location: @item.location, name: "", price: @item.price, quantity: @item.quantity } }
+    assert_not (200...299).include?(response.code.to_i)   # not ok
+  end
 end
