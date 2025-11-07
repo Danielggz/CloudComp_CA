@@ -5,12 +5,12 @@ class Item < ApplicationRecord
   validates :location, presence: true, length: { minimum: 2 }, uniqueness: true
   validates :price, presence: true
 
-  validate :expiryDate_cannot_be_in_the_past
+  # validate :expiryDate_cannot_be_in_the_past
   
-  def expiryDate_cannot_be_in_the_past
-    if expiryDate.present? && expiryDate < Date.today
-      errors.add(:expiryDate, "can't be in the past")
-    end
-  end
+  # def expiryDate_cannot_be_in_the_past
+  #   if expiryDate.present? && expiryDate < Date.today
+  #     errors.add(:expiryDate, "can't be in the past")
+  #   end
+  # end
   
 end
