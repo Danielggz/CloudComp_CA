@@ -4,6 +4,7 @@ class Item < ApplicationRecord
   validates :quantity, presence: true, numericality: { only_integer: true }
   validates :location, presence: true, length: { minimum: 2 }, uniqueness: true
   validates :price, presence: true
+  validates :barcode, presence: true, length: { is: 9 }, uniqueness:true
 
   # validate :expiryDate_cannot_be_in_the_past
   

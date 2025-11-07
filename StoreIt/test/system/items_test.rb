@@ -21,6 +21,7 @@ class ItemsTest < ApplicationSystemTestCase
     fill_in "Name", with: @item.name
     fill_in "Price", with: @item.price
     fill_in "Quantity", with: @item.quantity
+    fill_in "Barcode", with: @item.barcode
     click_on "Create Item"
 
     assert_text "Item was successfully created"

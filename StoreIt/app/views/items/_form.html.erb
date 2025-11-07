@@ -37,6 +37,11 @@
   </div>
 
   <div>
+    <%= form.label :barcode, style: "display: block" %>
+    <%= form.number_field :barcode %>
+  </div>
+
+  <div>
     <%= form.label :expires, style: "display: block" %>
     <%= form.checkbox :expires %>
   </div>
