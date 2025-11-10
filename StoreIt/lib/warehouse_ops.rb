@@ -4,10 +4,10 @@ class WarehouseOps
   end
   
   #Method for pick item
-  def self.pickItem(item)
+  def self.pickItem(item, quantity)
   end
 
   #Method for restock items
-  def self.restockItem(item)
+  def self.restockItem(item, quantity)
   end
 end
