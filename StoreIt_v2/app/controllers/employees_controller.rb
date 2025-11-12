@@ -13,6 +13,17 @@ class EmployeesController < ApplicationController
     render json: @employee
   end
 
+  # POST /employees/login
+  def login
+    @employee = Employee.where(number: params[:number], code: params[:code]).first
+
+    if @employee
+      render json: @employee, status: :ok
+    else
+      render json: { error: 'invalid credentials'}, status: :unauthorized
+    end
+  end
+
   # POST /employees
   def create
     @employee = Employee.new(employee_params)

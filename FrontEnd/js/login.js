@@ -2,11 +2,11 @@ document.getElementById('formLogin').addEventListener('submit', function(event) 
 event.preventDefault(); // Prevent page reload
 
 const formData = {
-    empNumber: document.getElementById('empNumber').value,
-    code:  document.getElementById('code').value
+    number: $('#number').val(),
+    code:  $('#code').val()
 };
 
-fetch('http://127.0.0.1:3000/employees', {
+fetch('http://127.0.0.1:3000/employees/login', {
     method: 'POST',
     headers: {
     'Content-Type': 'application/json',
