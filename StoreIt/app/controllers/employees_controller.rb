@@ -20,13 +20,15 @@ class EmployeesController < ApplicationController
   end
 
   # POST /employees or /employees.json
-  def create
+  def create    
     @employee = Employee.new(employee_params)
-
+    @res  = Login.loginEmp(@employee)
+    
     respond_to do |format|
       if @employee.save
-        format.html { redirect_to @employee, notice: "Employee was successfully created." }
-        format.json { render :show, status: :created, location: @employee }
+        render json: { result: @res }, status: :created, location: @operation
+        # format.html { redirect_to @employee, notice: "Employee was successfully created." }
+        # format.json { render :show, status: :created, location: @employee }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @employee.errors, status: :unprocessable_entity }

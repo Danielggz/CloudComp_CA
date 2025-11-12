@@ -7,15 +7,30 @@
   <body>
     <div class="container">
         <h1>Introduce details</h1>
-        <form>
+        <form id="formRegistration">
             <div class="mb-3">
                 <label for="empNumber" class="form-label">Employee Number</label>
                 <input type="number" class="form-control" id="empNumber" aria-describedby="empNumber">
                 <div id="empNumber" class="form-text"></div>
             </div>
             <div class="mb-3">
-                <label for="code" class="form-label">4-digit code</label>
+                <label for="code" class="form-label">4-digit security code</label>
                 <input type="password" class="form-control" id="code">
+            </div>
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" aria-describedby="name">
+                <div id="name" class="form-text"></div>
+            </div>
+            <div class="mb-3">
+                <label for="lastname" class="form-label">Lastname</label>
+                <input type="text" class="form-control" id="lastname" aria-describedby="lastname">
+                <div id="lastname" class="form-text"></div>
+            </div>
+            <div class="mb-3">
+                <label for="position" class="form-label">Position</label>
+                <input type="text" class="form-control" id="position" aria-describedby="position">
+                <div id="position" class="form-text"></div>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
