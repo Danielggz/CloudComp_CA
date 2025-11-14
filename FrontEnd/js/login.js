@@ -22,9 +22,11 @@ fetch('http://127.0.0.1:3000/employees/login', {
 })
 .then(data => {
     console.log('Success:', data);
+    window.location.href = "displayItems.html";
 })
 .catch(error => {
     console.error('Error:', error);
+    $("#msgError").html("<div style='margin-top:15px;' class='alert alert-danger'>Access denied.</div>")
 });
 
 

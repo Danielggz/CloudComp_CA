@@ -8,9 +8,11 @@
   <body>
     <div class="container">
         <div id="menu">
-            <div class="row">
+            <div style="margin-top:25px;" class="row">
                 <div class="col-md-4">
-                    <button class="btn btn-primary"> Create New Item</button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modCreateItem">
+                        Create New Item
+                    </button>
                 </div>
                 <div class="col-md-4">
                     
@@ -20,7 +22,63 @@
                 </div>
             </div>
         </div>
-        <div id="itemsTable"></div>
+        <div style="margin-top:25px;" id="itemsTable">
+        </div>
+    </div>
+
+    <div id="modCreateItem" class="modal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Create Item</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="formCreateItem">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Item name:</label>
+                        <input type="text" class="form-control" id="name" aria-describedby="name">
+                        <div id="name" class="form-text"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="category" class="form-label">Category:</label>
+                        <input type="text" class="form-control" id="category" aria-describedby="category">
+                        <div id="category" class="form-text"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="quantity" class="form-label">Quantity:</label>
+                        <input type="number" class="form-control" id="quantity" aria-describedby="quantity">
+                        <div id="quantity" class="form-text"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="location_row" class="form-label">Shelf Row (1-6):</label>
+                        <input type="number" class="form-control" id="location_row" aria-describedby="location_row">
+                        <div id="location_row" class="form-text"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="location_level" class="form-label">Shelf level (1-6):</label>
+                        <input type="number" class="form-control" id="location_level" aria-describedby="location_level">
+                        <div id="location_level" class="form-text"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="price" class="form-label">Price:</label>
+                        <input type="text" class="form-control" id="price" aria-describedby="price">
+                        <div id="price" class="form-text"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="barcode" class="form-label">Barcode:</label>
+                        <input type="number" class="form-control" id="barcode" aria-describedby="barcode">
+                        <div id="barcode" class="form-text"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button id="modalSave" type="button" class="btn btn-primary">Save changes</button>
+            </div>
+            </div>
+        </div>
     </div>
       
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
