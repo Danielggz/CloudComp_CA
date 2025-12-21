@@ -13,6 +13,17 @@ class MoviesController < ApplicationController
     render json: @movie
   end
 
+  # Search movies from title
+  def searchAPI
+    title = params[:title] 
+    
+    if title.blank? 
+      return render json: { error: "Missing title parameter" }, status: :bad_request 
+    end 
+    results = MovieFunctions.searchAPI(title) 
+    render json: results 
+  end
+
   # POST /movies
   def create
     @movie = Movie.new(movie_params)

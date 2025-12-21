@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  # Custom route for search in API
+  get "movies/searchAPI", to: "movies#searchAPI"
+
   resources :movies
   resources :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -9,4 +13,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
 end
