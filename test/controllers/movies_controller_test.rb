@@ -39,9 +39,9 @@ class MoviesControllerTest < ActionDispatch::IntegrationTest
   # CUSTOM TESTS
 
   # Should get searchAPI
-  test "should get search_api" do 
-    get "#{movies_search_api_url}?title=Home%20Alone", as: :json 
-    assert_response :success 
+  test "should get search_api" do
+    get "#{movies_search_api_url}?title=Home%20Alone", as: :json
+    assert_response :success
   end
 
   # Test searching by title
@@ -64,9 +64,9 @@ class MoviesControllerTest < ActionDispatch::IntegrationTest
   end
 
   # Test movie picker function
-  test "should get moviePicker" do 
-    get movies_movie_picker_url, as: :json 
-    assert_response :success 
+  test "should get moviePicker" do
+    get movies_movie_picker_url, as: :json
+    assert_response :success
   end
 
   # TEST VALIDATION RULES
@@ -99,5 +99,4 @@ class MoviesControllerTest < ActionDispatch::IntegrationTest
     movie = Movie.new(title: "Some valid movie", year: 1992, duration: 120, director: "Steven Spielbergo")
     assert movie.valid?
   end
-
 end

@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   # Custom route for search in API
   get "movies/search_api", to: "movies#search_api", as: :movies_search_api
   get "movies/moviePicker", to: "movies#moviePicker", as: :movies_movie_picker
