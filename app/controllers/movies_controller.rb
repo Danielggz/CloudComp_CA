@@ -21,8 +21,14 @@ class MoviesController < ApplicationController
     if title.blank? 
       return render json: { error: "Missing title parameter" }, status: :bad_request 
     end 
-    results = MovieFunctions.searchAPI(title, year) 
-    render json: results 
+    result = MovieFunctions.searchAPI(title, year) 
+    render json: result
+  end
+
+  # Get movie to watch from the watchlist
+  def moviePicker
+    result = MovieFunctions.picker()
+    render json: result
   end
 
   # POST /movies
