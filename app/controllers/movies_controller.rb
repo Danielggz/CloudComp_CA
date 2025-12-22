@@ -17,11 +17,11 @@ class MoviesController < ApplicationController
   def searchAPI
     title = params[:title]
     year = params[:year]
-    
-    if title.blank? 
-      return render json: { error: "Missing title parameter" }, status: :bad_request 
-    end 
-    result = MovieFunctions.searchAPI(title, year) 
+
+    if title.blank?
+      return render json: { error: "Missing title parameter" }, status: :bad_request
+    end
+    result = MovieFunctions.searchAPI(title, year)
     render json: result
   end
 

@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   # Custom route for search in API
   get "movies/searchAPI", to: "movies#searchAPI"
   get "movies/moviePicker", to: "movies#moviePicker"
@@ -14,5 +13,4 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-
 end
