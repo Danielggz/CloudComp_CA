@@ -3,7 +3,7 @@ require "uri"
 require "json"
 
 class MovieFunctions
-  def self.searchAPI(title, year)
+  def self.search_api(title, year)
     # Search movie by title and year (optional)
     apiKey = "eb214d12"
     url = URI("http://www.omdbapi.com/?apikey=#{apiKey}&t=#{URI.encode_www_form_component(title)}&y=#{URI.encode_www_form_component(year)}")
