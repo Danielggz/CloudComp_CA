@@ -4,8 +4,9 @@ require "json"
 
 class MovieFunctions
   
-  def self.searchAPI(title) 
-    url = URI("https://imdb.iamidiotareyoutoo.com/search?q=#{URI.encode_www_form_component(title)}&tt=&lsn=1&v=1") 
+  def self.searchAPI(title, year) 
+    apiKey = "eb214d12" 
+    url = URI("http://www.omdbapi.com/?apikey=#{apiKey}&t=#{URI.encode_www_form_component(title)}&y=#{URI.encode_www_form_component(year)}")
     response = Net::HTTP.get(url) 
     JSON.parse(response) 
   rescue => e 
