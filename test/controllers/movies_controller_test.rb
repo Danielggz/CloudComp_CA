@@ -74,25 +74,23 @@ class MoviesControllerTest < ActionDispatch::IntegrationTest
   test "is invalid without a title" do
     movie = Movie.new(year: 2000, duration: 120, director: "Some guy")
     assert_not movie.valid?
-    assert_includes movie.errors[:title], "can't be blank"
+    assert_includes movie.errors[:title], "Title is required"
   end
 
   test "is invalid without a year" do
     movie = Movie.new(title: "Bad movie", duration: 120, director: "Ron Howard")
     assert_not movie.valid?
-    assert_includes movie.errors[:year], "can't be blank"
+    assert_includes movie.errors[:year], "Year is required"
   end
 
   test "is invalid if year is not in range " do
-    current_year = Time.current.year
+    oldMovie = Movie.new(title: "Movie from when movies did not exist", year: 1560)
+    assert_not oldMovie.valid?
+    assert_includes oldMovie.errors[:year], "Year must be after 1900"
 
-    movie = Movie.new(title: "Movie from when movies did not exist", year: 1560)
-    assert_not movie.valid?
-    assert_includes movie.errors[:year], "must be greater than 1900"
-
-    movie.year = 3698
-    assert_not movie.valid?
-    assert_includes movie.errors[:year], "must be less than #{current_year}"
+    futureMovie = Movie.new(title: "Movie from a future in which Skynet took over", year: 3966)
+    assert_not futureMovie.valid?
+    assert_includes futureMovie.errors[:year], "must be less than #{Time.current.year}"
   end
 
   test "is valid with correct attributes" do
